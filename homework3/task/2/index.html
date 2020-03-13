@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="vueContainer">
+        <form action="hw3" enctype="application/x-www-form-urlencoded" method="GET" id="getForm">
+            <div id="container">
+                <ul>
+                    <li v-for="item in users">{{item}}</li>
+                </ul>
+            </div>
+            <button type="submit">Загрузить пользователей</button>
+        </form>
+    </div>
+</body>
+<script>
+    let app = new Vue({
+        el: "#vueContainer",
+        data: {
+            users: []
+        }
+    });
+
+    let form = document.getElementById('getForm'),
+        container = document.getElementById('container');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'users.json');
+
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) return;
+            if (xhr.status != 200) {
+                console.log(xhr.status + ' ' + xhr.statusText);
+            } else {
+                app.users = JSON.parse(xhr.responseText);
+            }
+        }
+    });
+</script>
+
+</html>
