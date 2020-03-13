@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .error404 {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            background-color: #fff;
+            display: block;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: normal 13px/15px Arial;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .error404-content {
+            position: absolute;
+            width: calc(100% - 40px);
+            max-width: 600px;
+            height: 180px;
+            top: 50%;
+            left: 50%;
+            font-size: 20px;
+            font-family: "neutra_textbook_alt", Arial, sans-serif;
+            text-align: center;
+            color: #131313;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        .error404-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            -o-object-fit: cover;
+            object-fit: cover;
+            z-index: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        
+        .error404-content h3 {
+            font-size: 72px;
+            font-family: "neutra_text_tfbold_alt", Arial, sans-serif;
+            text-transform: uppercase;
+            color: #967a37;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="page" class="error404" data-title="Erreur 404">
+
+
+        <div class="error404-content">
+            <h3>Erreur 404</h3>
+        </div>
+
+        <video class="error404-video" autoplay="true" loop="true" muted="muted">
+            <source src="https://www.fromageabondance.fr/assets/videos/404.mp4">
+        </video>
+
+
+    </section>
+</body>
+
+</html>
